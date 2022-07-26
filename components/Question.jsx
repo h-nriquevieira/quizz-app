@@ -20,7 +20,7 @@ export default function Question(props) {
             <button 
                 onClick={() => props.choseAnswer(props.question.id, answer)} 
                 key={nanoid()}
-                className={props.question.chosen === answer ? 'chosen' : ''}
+                className={props.question.chosen === answer ? 'chosen btn--answer' : 'btn--answer'}
             >
                 {answer}
             </button>
@@ -30,7 +30,7 @@ export default function Question(props) {
     return (
         <div className="question">
             <h2>{he.decode(props.question.question)}</h2>
-            {answerElements}
+            <div className="answers-container">{answerElements}</div>
         </div>
         
     )
